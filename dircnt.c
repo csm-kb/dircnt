@@ -10,6 +10,7 @@ int main (int argc, char *argv[])
 		fprintf (stderr, "[!] must specify a directory to count\n");
 		return 1;
 	}
+	int count_size = !(argc > 2 && !strcmp(argv[2],"--nosize"));
 	DIR *dp;
 	int i = 0;
 	unsigned long long tsize = 0;
@@ -20,6 +21,10 @@ int main (int argc, char *argv[])
 		while (ep = readdir (dp)) {
 			if (!strcmp(ep->d_name,".") || !strcmp(ep->d_name,".."))
 				continue;
+			if (!count_size) {
+				i++;
+				continue;
+			}
 			char fpath[4096];
 			struct stat st;
 
