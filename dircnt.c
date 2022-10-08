@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -10,7 +11,7 @@ int main (int argc, char *argv[])
 		fprintf (stderr, "[!] must specify a directory to count\n");
 		return 1;
 	}
-	int count_size = !(argc > 2 && !strcmp(argv[2],"--nosize"));
+	bool count_size = (argc > 2 && !strcmp(argv[2],"--size")); // todo: yes this is super basic flag checking
 	DIR *dp;
 	int i = 0;
 	unsigned long long tsize = 0;
