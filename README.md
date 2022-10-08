@@ -9,3 +9,8 @@ Useful when running with the `watch` utility, for arbitrary monitoring purposes:
 ```
 watch [-n interval_seconds] 'dircnt [dir]'
 ```
+
+Run times:
+| File count | Run time |
+| --- | --- |
+| 122301025 | ?? |
