@@ -24,6 +24,7 @@ int main (int argc, char *argv[])
 				continue;
 			if (!count_size) {
 				i++;
+				printf("\r%d files",i);
 				continue;
 			}
 			char fpath[4096];
@@ -32,13 +33,14 @@ int main (int argc, char *argv[])
 			strcpy(fpath,argv[1]);
 			strcat(fpath,"/");
 			strcat(fpath,ep->d_name);
-			if (stat(fpath,&st) == 0)
+			if (lstat(fpath,&st) == 0)
 				tsize += st.st_size;
 			else
 				perror("Failed to stat file");
 			i++;
 		}
 		(void) closedir (dp);
+		printf("\n");
 	}
 	else {
 		fprintf(stderr, "[!] couldn't open the directory\n");
