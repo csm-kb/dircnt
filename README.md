@@ -12,6 +12,6 @@ watch [-n interval_seconds] 'dircnt [dir] [--size]'
 Monitoring massive directories with millions of files may suffer a loss of real-time performance, depending on your operating environment (can be hit or miss).
 
 Run times:
-| File count | Run time | Filesystem | Environment|
-| --- | --- | --- | --- |
-| 122,301,025 | `<in progress>` | XFS | c5.12xlarge AMI box in AWS EC2, FS mounted on gp3 @ 16k IOPS r/w |
+| Count | `real` | `usr` |  `sys` | FileSys | Environment|
+| --- | --- | --- | --- | --- | --- |
+| 122,042,933 | `5m4.703s` | `0m10.375s` | `0m50.312s` | XFS | c5.12xlarge AMI box in AWS EC2, FS mounted on gp3 @ 16k IOPS r/w |
